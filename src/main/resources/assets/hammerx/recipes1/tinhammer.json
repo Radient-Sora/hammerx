@@ -1,0 +1,20 @@
+{
+"type": "hammerz:hammer_shaped",
+  "pattern": [
+    "HHH",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "H": {
+      "type": "forge:ore_dict",
+      "ore": "blockTin"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "hammertype": "tin"
+  }
+}

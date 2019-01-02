@@ -1,0 +1,6 @@
+{
+  "parent": "hammerx:item/hammer",
+  "textures": {
+    "layer0": "hammerx:items/unity/clockworkhammer"
+  }
+}

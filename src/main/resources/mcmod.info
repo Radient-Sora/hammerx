@@ -1,0 +1,21 @@
+[
+{
+  "modid": "hammerz",
+  "name": "Hammerz",
+  "description": "Successor to Hammerz",
+  "version": "1.12.2-1.00",
+  "mcversion": "1.12.2",
+  "url": "",
+  "updateUrl": "",
+  "authors": [
+    "Radient_Sora"
+  ],
+  "credits": "VapourDrive, theRealp455w0rd",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

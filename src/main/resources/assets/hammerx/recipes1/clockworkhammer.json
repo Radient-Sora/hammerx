@@ -1,0 +1,23 @@
+{
+"type": "hammerz:hammer_shaped",
+  "pattern": [
+    "HEH",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "H": {
+      "type": "forge:ore_dict",
+      "ore": "blockDawnstone"
+    },
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "E": {
+      "item":"embers:crystal_ember"
+    }
+  },
+  "result": {
+    "hammertype": "clockwork"
+  }
+}

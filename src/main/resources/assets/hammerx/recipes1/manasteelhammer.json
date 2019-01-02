@@ -1,0 +1,21 @@
+{
+"type": "hammerz:hammer_shaped",
+  "pattern": [
+    "HHH",
+    " / ",
+    " / "
+  ],
+  "key": {
+    "H": {
+      "item": "botania:storage",
+	  "data": 0
+    },
+    "/": {
+      "item": "botania:manaresource",
+	  "data": 3
+    }
+  },
+  "result": {
+    "item": "manasteel"
+  }
+}
