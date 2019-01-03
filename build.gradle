@@ -11,14 +11,13 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
-//Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
 
 version = "1.12.2-1.0.0"
-group= "sora.hammerx" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "sora.hammerx"
 archivesBaseName = "hammerz"
 
-sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = "1.8"
 compileJava {
     sourceCompatibility = targetCompatibility = "1.8"
 }
@@ -34,44 +33,52 @@ repositories {
         name = "CoFH Maven"
         url = "http://maven.covers1624.net"
     }
-    maven { url 'https://jitpack.io' }
+	
     maven {
-        name 'Curseforge Maven'
-        url 'http://minecraft.curseforge.com/api/maven/'
-    }
-
+		url = "https://jitpack.io" 
+	}
+	
     maven {
-        name 'tterrag maven'
-        url "https://maven.tterrag.com/"
+        name = "Curseforge Maven"
+        url = "http://minecraft.curseforge.com/api/maven/"
     }
+	
+	maven {
+        name = "thiakil"
+        url = "http://maven.thiakil.com"
+	}
+	
+    maven {
+        name = "tterrag maven"
+        url = "http://maven.tterrag.com/"
+    }
+	
+	maven {
+		name = "Jared Maven"
+		url = "https://maven.blamejared.com/"
+	}
 }
 
 dependencies {
 	deobfCompile "cofh:RedstoneFlux:1.12-2.0.0.1:universal"
-    compile 'com.github.Azanor:Baubles:-SNAPSHOT'
-    deobfCompile "thaumcraft:Thaumcraft:${project.minecraftVersion}:${project.thaumcraft}"
+	deobfCompile "com.azanor.baubles:Baubles:1.12-1.5.2"
+	deobfCompile "thaumcraft:Thaumcraft:${project.minecraftVersion}:${project.thaumcraft}"
     deobfCompile "mcjty.theoneprobe:TheOneProbe-1.12:1.12-1.4.23-16"
-
-    //botania and Embers should be in /libs
-    compile files("libs/Botania+r1.10-356-deobf.jar")
-    compile files("libs/EmbersRekindled-1.7-deobf.jar")
+	deobfCompile "vazkii.botania:Botania:r1.10-359.9"
+    deobfCompile "embers-rekindled:EmbersRekindled:1.11:hotfix"
 }
 
 processResources
 {
-    // this will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
 
-    // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
                 
-        // replace version and mcversion
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
         
-    // copy everything else, thats not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }

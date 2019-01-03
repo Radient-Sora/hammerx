@@ -1,27 +1,31 @@
 package sora.hammerx.items.hammer;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.util.EnumHelper;
+import teamroots.embers.RegistryManager;
 
 public class HammerTypeInfo {
 
     public static enum HammerType {
-        WOODEN("Wood", Item.ToolMaterial.WOOD),
-        STONE("Stone", Item.ToolMaterial.STONE),
-        IRON("Iron", Item.ToolMaterial.IRON),
-        GOLD("Gold", Item.ToolMaterial.GOLD),
-        DIAMOND("Diamond", Item.ToolMaterial.DIAMOND),
-        COPPER("Copper", EnumHelper.addToolMaterial("Copper", 0, 32, 12.0F, 0.0F, 22));
+        WOODEN("Wood", Item.ToolMaterial.WOOD, Item.ToolMaterial.WOOD.getRepairItemStack()),
+        STONE("Stone", Item.ToolMaterial.STONE, Item.ToolMaterial.STONE.getRepairItemStack()),
+        IRON("Iron", Item.ToolMaterial.IRON, Item.ToolMaterial.IRON.getRepairItemStack()),
+        GOLD("Gold", Item.ToolMaterial.GOLD,Item.ToolMaterial.GOLD.getRepairItemStack()),
+        DIAMOND("Diamond", Item.ToolMaterial.DIAMOND,Item.ToolMaterial.DIAMOND.getRepairItemStack()),
+        COPPER("Copper", RegistryManager.tool_mat_copper,RegistryManager.tool_mat_copper.getRepairItemStack());
 
 
         String type;
         public Item.ToolMaterial material;
-        String oreDictName;
+      ItemStack repairType;
 
 
-        HammerType(String type, Item.ToolMaterial material) {
+        HammerType(String type, Item.ToolMaterial material, ItemStack repairType) {
             this.type = type;
             this.material = material;
+            this.repairType = material.getRepairItemStack();
+
 
 
         }
